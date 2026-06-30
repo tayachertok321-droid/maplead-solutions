@@ -74,7 +74,12 @@ export default function Home() {
                 text: "of all clicks go to the top 3 Google Map results",
               },
               {
-                stat: "📍",
+                stat: (
+                  <svg className="w-12 h-12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                    <circle cx="12" cy="10" r="3" />
+                    <path d="M12 2a8 8 0 0 0-8 8c0 5.4 7.05 11.5 7.35 11.76a1 1 0 0 0 1.3 0C12.95 21.5 20 15.4 20 10a8 8 0 0 0-8-8z" />
+                  </svg>
+                ),
                 text: "Most contractors in NJ are invisible on Google — we fix that",
               },
             ].map((card, i) => (
@@ -82,7 +87,7 @@ export default function Home() {
                 key={i}
                 className="bg-[#7C3AED] text-white rounded-2xl shadow-md p-8 flex flex-col items-center text-center gap-4"
               >
-                <span className="text-4xl font-extrabold">{card.stat}</span>
+                <div className="text-4xl font-extrabold">{card.stat}</div>
                 <p className="text-lg font-medium leading-snug opacity-90">
                   {card.text}
                 </p>
@@ -196,17 +201,33 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
               {
-                icon: "⭐",
+                icon: (
+                  <svg className="w-7 h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                  </svg>
+                ),
                 headline: "5+ New Reviews Per Month",
                 sub: "Consistent social proof that builds trust and boosts your Maps ranking.",
               },
               {
-                icon: "📍",
+                icon: (
+                  <svg className="w-7 h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                    <circle cx="12" cy="10" r="3" />
+                    <path d="M12 2a8 8 0 0 0-8 8c0 5.4 7.05 11.5 7.35 11.76a1 1 0 0 0 1.3 0C12.95 21.5 20 15.4 20 10a8 8 0 0 0-8-8z" />
+                  </svg>
+                ),
                 headline: "Top 3 Maps Ranking Within 90 Days",
                 sub: "Show up where 75% of the clicks actually go.",
               },
               {
-                icon: "📊",
+                icon: (
+                  <svg className="w-7 h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                    <path d="M3 3v18h18" />
+                    <rect x="7" y="12" width="3" height="7" rx="0.5" />
+                    <rect x="12" y="8" width="3" height="11" rx="0.5" />
+                    <rect x="17" y="5" width="3" height="14" rx="0.5" />
+                  </svg>
+                ),
                 headline: "Full Transparency",
                 sub: "Monthly reporting on every metric that matters — rankings, calls, clicks.",
               },
@@ -215,7 +236,9 @@ export default function Home() {
                 key={i}
                 className="bg-[#EDE9FE] rounded-2xl shadow-md p-8 flex flex-col items-center text-center gap-3"
               >
-                <span className="text-3xl">{result.icon}</span>
+                <div className="w-12 h-12 bg-white rounded-xl flex items-center justify-center text-[#7C3AED]">
+                  {result.icon}
+                </div>
                 <h3 className="text-lg font-bold text-[#5B21B6]">
                   {result.headline}
                 </h3>
